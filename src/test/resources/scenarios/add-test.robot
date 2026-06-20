@@ -27,7 +27,7 @@ Calculate In Application Page
     Input Text    arg1    ${arg1}
     Input Text    arg2    ${arg2}
     Submit Form
-    BuiltIn.Sleep	1
+    BuiltIn.Sleep    1
     ${result}=    Get Value    result
     [Return]    ${result}
 
