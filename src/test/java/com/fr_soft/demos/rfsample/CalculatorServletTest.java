@@ -70,4 +70,23 @@ public class CalculatorServletTest {
         assertEquals("200", request.getAttribute("arg2"));
         assertEquals("300", request.getAttribute("result"));
     }
+
+
+	@Test
+public void test_doPostReturnsAnswerIfBothArgsAreNumber_Multiplication() throws IOException, ServletException {
+
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    MockHttpServletResponse response = new MockHttpServletResponse();
+
+    request.addParameter("arg1", "10");
+    request.addParameter("arg2", "5");
+
+    this.servlet.doPost(request, response);
+
+    assertEquals("10", request.getAttribute("arg1"));
+    assertEquals("5", request.getAttribute("arg2"));
+
+    // ⭐ EXPECT MULTIPLICATION RESULT
+    assertEquals("50", request.getAttribute("result"));
+}
 }
