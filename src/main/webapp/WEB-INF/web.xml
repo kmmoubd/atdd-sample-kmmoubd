@@ -1,30 +1,19 @@
-<<<<<<< HEAD
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
     <servlet>
-        <servlet-name>CalculatorServlet</servlet-name>
+        <servlet-name>calculator</servlet-name>
         <servlet-class>com.fr_soft.demos.rfsample.CalculatorServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>CalculatorServlet</servlet-name>
+        <servlet-name>calculator</servlet-name>
         <url-pattern>/calculate</url-pattern>
     </servlet-mapping>
-=======
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
-    <servlet>
-        <servlet-name>CalculatorServlet</servlet-name>
-        <servlet-class>com.fr_soft.demos.rfsample.CalculatorServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CalculatorServlet</servlet-name>
-        <url-pattern>/calculate</url-pattern>
-    </servlet-mapping>
->>>>>>> 0724fee36e64a4a6d96e5b27ffe11d005a6380e8
+
 </web-app>

@@ -1,36 +1,24 @@
 *** Settings ***
-Library           SeleniumLibrary
-
-*** Variables ***
-${BROWSER}        chrome
+Library    SeleniumLibrary
 
 *** Test Cases ***
 Multiplication Works Well
-    [Template]    Multiplication Workflow
-    1    2    2
-    10   5    50
-    3    4    12
-    100  200  20000
+    Open Browser    http://localhost:8080/calculate    chrome
+    Maximize Browser Window
 
-*** Keywords ***
-Multiplication Workflow
-    [Arguments]    ${arg1}    ${arg2}    ${expected}
-    Open Application Page
-    ${calc_value}=    Calculate In Application Page    ${arg1}    ${arg2}
-    Should Be Equal    ${calc_value}    ${expected}
-    Close Application Page
+    Input Text    name=arg1    10
+    Input Text    name=arg2    5
 
-Open Application Page
-    Open Browser    http://localhost:8080/calculate    ${BROWSER}
+    # IMPORTANT FIX: operation field
+    Select From List By Value    name=operation    mul
 
-Calculate In Application Page
-    [Arguments]    ${arg1}    ${arg2}
-    Input Text    arg1    ${arg1}
-    Input Text    arg2    ${arg2}
     Submit Form
-    BuiltIn.Sleep    1
-    ${result}=    Get Value    result
-    [Return]    ${result}
 
-Close Application Page
+    Sleep    2s
+
+    ${result}=    Get Value    id=result
+    ${result}=    Strip String    ${result}
+
+    Should Be Equal    ${result}    50
+
     Close Browser

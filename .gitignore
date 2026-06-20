@@ -2,3 +2,11 @@
 .project
 .classpath
 .settings
+
+# reports
+output.xml
+log.html
+report.html
+selenium-screenshot-*.png
+.DS_Store
+src/.DS_Store

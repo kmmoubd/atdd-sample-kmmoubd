@@ -9,13 +9,23 @@
 </head>
 <body>
 
-        <form action="./calculate" method="POST">
-            <input type="text" name="arg1" value="<%= request.getAttribute("arg1") %>" />
-            <span>+</span>
-            <input type="text" name="arg2" value="<%= request.getAttribute("arg2") %>" />
-            <input type="submit" value="="/>
-            <input type="text" name="result" value="<%= request.getAttribute("result") %>" />
-        </form>
+        <form action="calculate" method="post">
+
+    <input type="text" name="arg1"/>
+    <input type="text" name="arg2"/>
+
+    <select name="operation">
+        <option value="add">Add</option>
+        <option value="mul">Multiply</option>
+    </select>
+
+    <input type="submit" value="Calculate"/>
+
+    <!-- 👇 THIS LINE (must be just before </form>) -->
+    <span id="result">${result}</span>
+
+</form>
+
 
         <ul>
 <%
