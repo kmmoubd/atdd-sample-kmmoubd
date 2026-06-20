@@ -97,4 +97,69 @@ public void testMultiplication() throws IOException, ServletException {
 
     assertEquals("50", request.getAttribute("result"));
 }
+
+
+@Test
+public void testSubtraction() throws IOException, ServletException {
+
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    MockHttpServletResponse response = new MockHttpServletResponse();
+
+    request.addParameter("arg1", "10");
+    request.addParameter("arg2", "5");
+    request.addParameter("operation", "sub");
+
+    servlet.doPost(request, response);
+
+    assertEquals("5", request.getAttribute("result"));
+}
+
+
+@Test
+public void testDivision() throws IOException, ServletException {
+
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    MockHttpServletResponse response = new MockHttpServletResponse();
+
+    request.addParameter("arg1", "20");
+    request.addParameter("arg2", "4");
+    request.addParameter("operation", "div");
+
+    servlet.doPost(request, response);
+
+    assertEquals("5", request.getAttribute("result"));
+}
+
+@Test
+public void testAdditionOfThreeNumbers() throws IOException, ServletException {
+
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    MockHttpServletResponse response = new MockHttpServletResponse();
+
+    request.addParameter("arg1", "10");
+    request.addParameter("arg2", "20");
+    request.addParameter("arg3", "30");
+    request.addParameter("operation", "add3");
+
+    servlet.doPost(request, response);
+
+    assertEquals("60", request.getAttribute("result"));
+}
+
+
+@Test
+public void testMultiplicationOfThreeNumbers() throws IOException, ServletException {
+
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    MockHttpServletResponse response = new MockHttpServletResponse();
+
+    request.addParameter("arg1", "2");
+    request.addParameter("arg2", "3");
+    request.addParameter("arg3", "4");
+    request.addParameter("operation", "mul3");
+
+    servlet.doPost(request, response);
+
+    assertEquals("24", request.getAttribute("result"));
+}
 }
