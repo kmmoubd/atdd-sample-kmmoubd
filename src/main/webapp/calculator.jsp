@@ -13,10 +13,12 @@
 
     <input type="text" name="arg1"/>
     <input type="text" name="arg2"/>
-
+    
     <select name="operation">
         <option value="add">Add</option>
         <option value="mul">Multiply</option>
+    <option value="sub">Subtract</option>
+    <option value="div">Divide</option>
     </select>
 
     <input type="submit" value="Calculate"/>
