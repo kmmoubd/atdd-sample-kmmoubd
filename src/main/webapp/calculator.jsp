@@ -5,20 +5,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Sample Web</title>
+<title>Calculator</title>
 </head>
 <body>
 
         <form action="calculate" method="post">
 
-    <input type="text" name="arg1"/>
-    <input type="text" name="arg2"/>
-    
+    <input type="text" name="arg1" placeholder="First Number"/>
+    <input type="text" name="arg2" placeholder="Second Number"/>
+    <input type="text" name="arg3" placeholder="Third Number (optional)"/>
+
     <select name="operation">
         <option value="add">Add</option>
         <option value="mul">Multiply</option>
-    <option value="sub">Subtract</option>
-    <option value="div">Divide</option>
+        <option value="sub">Subtract</option>
+        <option value="div">Divide</option>
+        <option value="add3">Add (3 numbers)</option>
+        <option value="mul3">Multiply (3 numbers)</option>
     </select>
 
     <input type="submit" value="Calculate"/>

@@ -16,6 +16,7 @@ public class CalculatorServlet extends HttpServlet {
 
         request.setAttribute("arg1", null);
         request.setAttribute("arg2", null);
+        request.setAttribute("arg3", null);
         request.setAttribute("result", null);
 
         request.getRequestDispatcher("calculator.jsp").forward(request, response);

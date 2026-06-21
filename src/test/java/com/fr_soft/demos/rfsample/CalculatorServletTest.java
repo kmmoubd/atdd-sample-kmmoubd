@@ -23,6 +23,7 @@ public class CalculatorServletTest {
 
         assertNull(request.getAttribute("arg1"));
         assertNull(request.getAttribute("arg2"));
+        assertNull(request.getAttribute("arg3"));
         assertNull(request.getAttribute("result"));
     }
 
@@ -128,6 +129,21 @@ public void testDivision() throws IOException, ServletException {
     servlet.doPost(request, response);
 
     assertEquals("5", request.getAttribute("result"));
+}
+
+@Test
+public void testDivisionByZero() throws IOException, ServletException {
+
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    MockHttpServletResponse response = new MockHttpServletResponse();
+
+    request.addParameter("arg1", "20");
+    request.addParameter("arg2", "0");
+    request.addParameter("operation", "div");
+
+    servlet.doPost(request, response);
+
+    assertEquals("N/A", request.getAttribute("result"));
 }
 
 @Test
